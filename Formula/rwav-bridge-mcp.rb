@@ -1,21 +1,19 @@
 class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server (Model Context Protocol)"
   homepage "https://rwav-bridge.co.uk/mcp/"
-  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.1.6/rwav-mcp-server-0.1.5.tgz"
-  sha256 "4bf373473d01b01bb83b3a273d83f44adb505321d01c7032428cf041e536cefe"
+  url "https://github.com/calibress/rwav-mcp-server/releases/download/v0.1.8/calibress-rwav-bridge-mcp-0.1.8.tgz"
+  sha256 "2d9c4966e184815f335394cc1f9ac9d365bda70a21c5e430569d9d868f6ea7a2"
   license "Proprietary"
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["
-#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    out = shell_output("
-#{bin}/rwav-bridge-mcp --help", 0)
+    out = shell_output("#{bin}/rwav-bridge-mcp --help", 0)
     assert_match "RWAV Bridge MCP", out
   end
 end
