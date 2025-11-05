@@ -1,8 +1,8 @@
 class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server (Model Context Protocol)"
   homepage "https://rwav-bridge.co.uk/mcp/"
-  url "https://github.com/calibress/rwav-mcp-server/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.1.6/rwav-mcp-server-0.1.5.tgz"
+  sha256 "4bf373473d01b01bb83b3a273d83f44adb505321d01c7032428cf041e536cefe"
   license "Proprietary"
 
   depends_on "node"
