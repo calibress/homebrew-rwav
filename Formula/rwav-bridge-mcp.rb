@@ -5,6 +5,8 @@ class RwavBridgeMcp < Formula
   sha256 "2d9c4966e184815f335394cc1f9ac9d365bda70a21c5e430569d9d868f6ea7a2"
   license "Proprietary"
 
+  revision 1
+
   depends_on "node"
 
   def install
