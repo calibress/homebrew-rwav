@@ -18,7 +18,7 @@ end
 
 
   def post_install
-    system "#{bin}/rwav-bridge-mcp"
+    system "#{bin}/rwav-bridge-mcp", "--setup"
   end
 
   test do
