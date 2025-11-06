@@ -2,18 +2,23 @@ class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server"
   homepage "https://github.com/calibress/rwav-mcp-bridge"
   url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.1.9/rwav-bridge-mcp-v0.1.9.tar.gz"
-  sha256 "3b0cc9f3a32d935e162843797e9fda28e4c11e5742dfa745e96c02a729e4250e"
+  sha256 "1be7de7da99fdf9fec843de4ea3a5324901aefe6d3da0e371e2edaa1112e4ec5"
   license :cannot_represent
 
   depends_on "node"
 
   def install
-    libexec.install "build/rwav-bridge-mcp.cjs", "bin/rwav-bridge-mcp.js", "LICENSE", "README.md", "package.json"
-    bin.write_exec_script libexec/"rwav-bridge-mcp.js"
-  end
+  libexec.install "build/rwav-bridge-mcp.cjs", "bin/rwav-bridge-mcp.js", "bin/rwav-bridge-mcp-doctor.js", "bin/rwav-bridge-mcp-setup.js", "LICENSE", "README.md", "package.json"
+  bin.write_exec_script libexec/"rwav-bridge-mcp.js"
+  bin.write_exec_script libexec/"rwav-bridge-mcp-doctor.js"
+  bin.write_exec_script libexec/"rwav-bridge-mcp-setup.js"
+  bin.install_symlink bin/"rwav-bridge-mcp.js" => "rwav-bridge-mcp"
+  bin.install_symlink bin/"rwav-bridge-mcp-doctor.js" => "rwav-bridge-mcp-doctor"
+end
+
 
   def post_install
-    system "[31m#{bin}/rwav-bridge-mcp[0m", "--setup"
+    system "#{bin}/rwav-bridge-mcp"
   end
 
   test do
