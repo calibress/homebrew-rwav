@@ -1,8 +1,8 @@
 class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server"
   homepage "https://github.com/calibress/rwav-mcp-bridge"
-  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.5/rwav-bridge-mcp-v0.2.5.tar.gz"
-  sha256 "77d050350626efc538140692570a80db1fe1dfde48b42a7191e0019598f0765b"
+  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.6/rwav-bridge-mcp-v0.2.6.tar.gz"
+  sha256 "b2c056fc02a400633e5f1c6544971258a9983a8260c18bcdb570508e26468df2"
   license :cannot_represent
 
   depends_on "node"
@@ -22,6 +22,6 @@ class RwavBridgeMcp < Formula
 
   test do
     output = shell_output("#{bin}/rwav-bridge-mcp --version")
-    assert_match "0.2.5", output
+    assert_match "0.2.6", output
   end
 end
