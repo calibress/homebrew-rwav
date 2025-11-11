@@ -4,8 +4,10 @@ class RwavBridgeMcp < Formula
   url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.11/rwav-bridge-mcp-v0.2.11.tar.gz"
   sha256 "706f396ab8e52700c736b3e1b80ec53606bb53846487a2b6429220f2dd1c65e5"
   license :cannot_represent
+  revision 1
 
   depends_on "node"
+  depends_on "sqlite"
 
   def install
     libexec.install "build/rwav-bridge-mcp.cjs", "bin/rwav-bridge-mcp.js", "bin/rwav-bridge-mcp-doctor.js", "bin/rwav-bridge-mcp-setup.js", "LICENSE", "README.md", "package.json"
