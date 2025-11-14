@@ -1,8 +1,8 @@
 class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server"
   homepage "https://github.com/calibress/rwav-mcp-bridge"
-  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.12/rwav-bridge-mcp-v0.2.12.tar.gz"
-  sha256 "f1f6e0d7bda35dcd343ad50d856064a594e098b13871e439176b8e3ade83aadc"
+  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.13/rwav-bridge-mcp-v0.2.13.tar.gz"
+  sha256 "14d67c0a582aefca008f2fb836a0a1a6f763742ef58ace0e8c0c8a978422e99a"
   license :cannot_represent
   revision 1
 
