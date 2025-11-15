@@ -24,7 +24,7 @@ class RwavBridgeMcp < Formula
       #!/bin/sh
       exec "#{Formula["node"].opt_bin}/node" "#{libexec}/rwav-bridge-mcp-setup.js" "$@"
     SH
-    chmod 0755, bin/"rwav-bridge-mcp", bin/"rwav-bridge-mcp-doctor", bin/"rwav-bridge-mcp-setup"
+    chmod 0755, [bin/"rwav-bridge-mcp", bin/"rwav-bridge-mcp-doctor", bin/"rwav-bridge-mcp-setup"]
   end
 
   def post_install
