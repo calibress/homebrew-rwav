@@ -24,6 +24,6 @@ class RwavBridgeMcp < Formula
 
   test do
     output = shell_output("#{bin}/rwav-bridge-mcp --version")
-    assert_match "0.2.12", output
+    assert_match version.to_s, output
   end
 end
