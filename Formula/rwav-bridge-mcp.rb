@@ -11,11 +11,20 @@ class RwavBridgeMcp < Formula
 
   def install
     libexec.install "build/rwav-bridge-mcp.cjs", "bin/rwav-bridge-mcp.js", "bin/rwav-bridge-mcp-doctor.js", "bin/rwav-bridge-mcp-setup.js", "LICENSE", "README.md", "package.json"
-    bin.write_exec_script libexec/"rwav-bridge-mcp.js"
-    bin.write_exec_script libexec/"rwav-bridge-mcp-doctor.js"
-    bin.write_exec_script libexec/"rwav-bridge-mcp-setup.js"
-    bin.install_symlink bin/"rwav-bridge-mcp.js" => "rwav-bridge-mcp"
-    bin.install_symlink bin/"rwav-bridge-mcp-doctor.js" => "rwav-bridge-mcp-doctor"
+    # Ensure wrappers execute via Node explicitly (works even if libexec JS lacks +x)
+    (bin/"rwav-bridge-mcp").write <<~SH
+      #!/bin/sh
+      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/rwav-bridge-mcp.js" "$@"
+    SH
+    (bin/"rwav-bridge-mcp-doctor").write <<~SH
+      #!/bin/sh
+      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/rwav-bridge-mcp-doctor.js" "$@"
+    SH
+    (bin/"rwav-bridge-mcp-setup").write <<~SH
+      #!/bin/sh
+      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/rwav-bridge-mcp-setup.js" "$@"
+    SH
+    chmod 0755, bin/"rwav-bridge-mcp", bin/"rwav-bridge-mcp-doctor", bin/"rwav-bridge-mcp-setup"
   end
 
   def post_install
