@@ -12,6 +12,9 @@ class RwavBridgeMcp < Formula
   def install
     libexec.install "build/rwav-bridge-mcp.cjs", "bin/rwav-bridge-mcp.js", "bin/rwav-bridge-mcp-doctor.js", "bin/rwav-bridge-mcp-setup.js", "LICENSE", "README.md", "package.json"
     # Ensure wrappers execute via Node explicitly (works even if libexec JS lacks +x)
+    rm_f bin/"rwav-bridge-mcp"
+    rm_f bin/"rwav-bridge-mcp-doctor"
+    rm_f bin/"rwav-bridge-mcp-setup"
     (bin/"rwav-bridge-mcp").write <<~SH
       #!/bin/sh
       exec "#{Formula["node"].opt_bin}/node" "#{libexec}/rwav-bridge-mcp.js" "$@"
