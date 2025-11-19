@@ -1,10 +1,9 @@
 class RwavBridgeMcp < Formula
   desc "RWAV Bridge MCP server"
   homepage "https://github.com/calibress/rwav-mcp-bridge"
-  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.17/rwav-bridge-mcp-v0.2.17-1.tar.gz"
-  sha256 "8fcd0403d0730f8c1b5ef98e4afc4926a94112b7256fd83a130110cb1fbf4b81"
+  url "https://github.com/calibress/rwav-mcp-bridge/releases/download/v0.2.19/rwav-bridge-mcp-v0.2.19.tar.gz"
+  sha256 "a5f4d2467e03d652eb7c6988bcdb9376499a96ec4364ececedd9d99d9b8cd718"
   license :cannot_represent
-  revision 1
 
   depends_on "node"
   depends_on "sqlite"
